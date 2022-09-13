@@ -1,0 +1,52 @@
+<!-- {% extends 'index.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+
+{% block body %}
+
+
+<div class="content">
+    <h1>Update Task</h1>
+    <form action="/update/{{todo.id}}" method="POST">
+        <input type="text" name="todo_input" id="todo" value="{{todo_input}}">
+        <input type="submit" value="Update">
+    </form>
+</div>
+
+
+{% endblock %} -->
+
+
+{% extends 'index.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+
+{% block body %}
+
+
+ <!-- <h2>todos</h2>
+ {% for whatever in todos %}
+ <ul>
+     <li>{{ whatever.todo }}</li>
+ </ul>
+ {% endfor %} -->
+
+    <h1>Task Update</h1>
+    <div class="content">
+
+
+ <form form-action="/update/{{todo.id}}" method="POST">
+    <div class="forms">  
+       
+        <input type="text"  placeholder="Name"name="todo_input" value="{{todo.id}}">
+    </div>
+    <input  class="button" type="submit" value="Update">
+ </form>
+
+{% endblock %}

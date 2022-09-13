@@ -1,0 +1,49 @@
+{% extends 'index.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+
+{% block body %}
+
+
+ <!-- <h2>todos</h2>
+ {% for whatever in todos %}
+ <ul>
+     <li>{{ whatever.todo }}</li>
+ </ul>
+ {% endfor %} -->
+
+    <h1>Task master</h1>
+    <div class="content">
+
+    <table>
+        <tr>
+            <th>Task</th>
+            <th>Actions</th>
+        </tr>
+        {%  for todo_input in todos %}
+
+            <tr>
+                <td>{{ todo_input.todo}}</td>
+                <td>
+                    <a href="/delete/{{todo_input.id}}">Delete</a>
+                    <br>
+                    <a href="/update/{{todo_input.id}}">Update</a>
+                    <!-- <a href="">Update</a> -->
+                </td>
+            </tr>
+            {% endfor %}
+    </table> 
+ </div>
+
+ <form form-action="{{ url_for('home') }}" method="POST">
+    <div class="forms">  
+       
+        <input type="text"  placeholder="Name"name="todo_input">
+    </div>
+    <input  class="button" type="submit" value="add">
+ </form>
+
+{% endblock %}
